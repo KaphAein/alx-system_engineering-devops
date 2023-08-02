@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -apv | tr '\n' ','
+ls -apv | tr '\n' ',\n'
