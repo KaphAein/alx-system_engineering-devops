@@ -7,7 +7,7 @@ while [ $count -lt 10 ]
 do
 	echo "Best School"
 	if [ $count -eq 8 ]
-	   echo "hi"
+	then echo "Hi"
 	fi
 	(( count++ ))
 done
