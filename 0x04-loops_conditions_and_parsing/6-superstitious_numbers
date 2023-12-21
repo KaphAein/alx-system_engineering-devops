@@ -1,17 +1,26 @@
 #!/usr/bin/env bash
 #displays "Best School" 10 times using while loop
 
-hour=0
+count=1
 
-while [ $hour -lt 12 ]; do
-	echo "Hour: $hour:"
+while [ $count -le 20 ]; do
+	case $count in
+		4)
+			echo $count
+			echo "bad luck from China"
+			;;
+		9)
+			echo $count
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo $count
+			echo "bad luck from Italy"
+			;;
+		*)
+			echo $count
+			;;
+	esac
 
-	minute=1
-
-	while [ $minute -le 59 ]; do
-		echo $minute
-		((minute++))
-	done
-
-	((hour++))
+	((count++))
 done
