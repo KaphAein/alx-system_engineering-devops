@@ -1,7 +1,6 @@
-# File: kill_process.pp
+# kill process killmenow
 
-exec { 'kill_killmenow_process':
-  command     => 'pkill -f killmenow',
-  path        => '/usr/bin:/bin',
-  refreshonly => true,
+exec { 'pkill':
+  command  => 'pkill killmenow',
+  provider => 'shell',
 }
