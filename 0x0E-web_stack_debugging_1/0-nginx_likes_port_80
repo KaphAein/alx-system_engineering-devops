@@ -1,20 +1,7 @@
 #!/usr/bin/env bash
-
-# Ensure Nginx configuration is set to listen on port 80
-sed -i 's/.*listen.*80.*/    listen 80;/g' /etc/nginx/sites-available/default
-
-# Restart Nginx service
-service nginx restart
-
-# Check if Nginx is listening on port 80
-if nc -z 0 80; then
-    # Check if Nginx returns HTTP 200 status code
-    response_code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost)
-    if [ "$response_code" = "200" ]; then
-        exit 0
-    else
-        exit 1
-    fi
-else
-    exit 1
-fi
+# Debugging skills
+mv /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+cp /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
+service nginx stop
+pkill nginx
+service nginx start
