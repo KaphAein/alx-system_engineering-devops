@@ -3,6 +3,7 @@
 import requests
 import sys
 
+
 def fetch_data(url, path, params=None):
     try:
         response = requests.get(url + path, params=params, verify=False)
