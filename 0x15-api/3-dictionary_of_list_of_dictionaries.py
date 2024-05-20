@@ -6,7 +6,7 @@ import requests
 if __name__ == "__main__":
 
     url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(sys.argv[1])).json()
+    user = requests.get(url + "users").json()
 
     json_filename = "{}.json".format(user_id)
     try:
