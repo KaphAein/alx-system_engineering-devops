@@ -8,11 +8,6 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         sys.exit(1)
 
-    try:
-        user_id = int(sys.argv[1])
-    except ValueError:
-        sys.exit(1)
-
     url = "https://jsonplaceholder.typicode.com/"
     user = requests.get(url + "users/{}".format(sys.argv[1])).json()
     username = user.get("username")
