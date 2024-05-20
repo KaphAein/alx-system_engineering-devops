@@ -25,10 +25,10 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
 
     # Fetch user data
-    user = fetch_data(url, "users/{}".format(user_id)).json()
+    user = requests.get(url + "users/{}".format(sys.argv[1])).json()
 
     # Fetch to-do list
-    todos = fetch_data(url, "todos", params={"userId": user_id}).json()
+    todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
 
     completed = [t.get("title") for t in todos if t.get("completed") is True]
     print("Employee {} is done with tasks({}/{}):".format(
