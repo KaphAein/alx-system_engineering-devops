@@ -12,6 +12,7 @@ def fetch_data(url, path, params=None):
     except requests.exceptions.RequestException as e:
         sys.exit(1)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         sys.exit(1)
