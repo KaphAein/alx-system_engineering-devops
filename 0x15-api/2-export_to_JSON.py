@@ -23,7 +23,7 @@ if __name__ == "__main__":
     json_filename = "{}.json".format(user_id)
     try:
         with open(json_filename, "w", newline="") as jsonfile:
-        json.dump({user_id: [{
+            json.dump({user_id: [{
                 "task": t.get("title"),
                 "completed": t.get("completed"),
                 "username": username
